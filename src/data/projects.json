@@ -1,0 +1,53 @@
+[
+  {
+    "id": "proj1",
+    "name": "Holy Family Township",
+    "slug": "holy-family-township",
+    "location": "Greater Noida",
+    "description": "A well-planned residential township offering premium plots with all modern amenities. Holy Family Township is designed for families seeking a secure, planned community living experience near Greater Noida with registered titles, wide metalled roads, water, and electricity.",
+    "image": "/images/real/gallery4.jpg",
+    "mapImage": "/images/real/holy-project2.jpg",
+    "plotsAvailable": 45,
+    "plotsSold": 120,
+    "totalPlots": 165,
+    "priceRange": "₹15 Lakh - ₹35 Lakh",
+    "areaRange": "80 - 300 sq.yd.",
+    "status": "Active",
+    "highlights": ["Fully Developed", "Registry Ready", "Immediate Possession", "Gated Township", "24x7 Security", "Wide Internal Roads"],
+    "nearbyInfra": ["School - 1 km", "Hospital - 2 km", "Market - 1.5 km", "Metro Station - 5 km", "Yamuna Expressway - 8 km", "Jewar Airport - 25 km", "Park", "Temple"]
+  },
+  {
+    "id": "proj2",
+    "name": "Dudhola Farm House",
+    "slug": "dudhola-farm-house",
+    "location": "Dudhola, Greater Noida",
+    "description": "Exclusive farmhouse and retreat land in the lush green, peaceful Dudhola enclave. Build your private retreat, weekend villa, or organic farm surrounded by nature and complete tranquility, with direct road connectivity to Greater Noida.",
+    "image": "/images/real/dhudhola_farmhouse.jpg",
+    "mapImage": "/images/real/dhudhola_farmhouse.jpg",
+    "plotsAvailable": 18,
+    "plotsSold": 32,
+    "totalPlots": 50,
+    "priceRange": "₹35 Lakh - ₹1.5 Cr",
+    "areaRange": "500 - 2000 sq.yd.",
+    "status": "Active",
+    "highlights": ["Large Farmhouse Plots", "Natural Surroundings", "Registry Ready", "Bore Well Water", "Boundary Wall Demarcated", "40ft Wide Road"],
+    "nearbyInfra": ["Greater Noida City - 12 km", "Jewar Airport Corridor - 18 km", "Hospital - 5 km", "Local Market - 3 km", "School - 3 km"]
+  },
+  {
+    "id": "proj3",
+    "name": "Garhi Saamstipur Phase-3-1",
+    "slug": "garhi-saamstipur-phase-3-1",
+    "location": "Near Yamuna Expressway, Greater Noida",
+    "description": "Strategically positioned residential and high-yield investment plots directly accessible from the Yamuna Expressway corridor. Located in the direct growth zone of the upcoming Noida International Airport (Jewar) and Film City.",
+    "image": "/images/real/project2.jpg",
+    "mapImage": "/images/real/garhi-saamstipur-phase-3-1.jpg",
+    "plotsAvailable": 85,
+    "plotsSold": 200,
+    "totalPlots": 285,
+    "priceRange": "₹6 Lakh - ₹45 Lakh",
+    "areaRange": "60 - 300 sq.yd.",
+    "status": "Active",
+    "highlights": ["Direct Yamuna Expressway Access", "Near Jewar International Airport", "Fast Capital Appreciation", "Registry Ready", "Affordable Land Rates"],
+    "nearbyInfra": ["Yamuna Expressway - 3 km", "Jewar Airport - 20 km", "Greater Noida - 15 km", "Industrial Hub - 5 km", "School - 2 km", "Hospital - 4 km"]
+  }
+]

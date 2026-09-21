@@ -1,0 +1,50 @@
+[
+  {
+    "id": "l1",
+    "name": "Greater Noida",
+    "slug": "greater-noida",
+    "description": "Emerging real estate hub with wide expressways and metro connectivity. Home to Holy Family Township and planned residential colonies.",
+    "image": "/images/real/gallery4.jpg",
+    "plotsAvailable": 80
+  },
+  {
+    "id": "l2",
+    "name": "Jewar",
+    "slug": "jewar",
+    "description": "Strategic investment hotspot directly adjoining Noida International Airport. Land values and industrial corridors are appreciating rapidly.",
+    "image": "/images/real/jewar.jpg",
+    "plotsAvailable": 35
+  },
+  {
+    "id": "l3",
+    "name": "Yamuna Expressway",
+    "slug": "yamuna-expressway",
+    "description": "Premium 6-lane expressway connecting Greater Noida to Agra. Plots along this corridor offer high appreciation and institutional infrastructure.",
+    "image": "/images/real/project2.jpg",
+    "plotsAvailable": 50
+  },
+  {
+    "id": "l4",
+    "name": "Dudhola",
+    "slug": "dudhola",
+    "description": "Tranquil green agricultural belt ideal for private farmhouse plots. Surrounded by nature with direct road connectivity to Greater Noida.",
+    "image": "/images/real/dhudhola_farmhouse.jpg",
+    "plotsAvailable": 18
+  },
+  {
+    "id": "l5",
+    "name": "Garhi Saamstipur",
+    "slug": "garhi-saamstipur",
+    "description": "Rapidly developing residential and commercial plot hub situated near Yamuna Expressway with immediate registry readiness.",
+    "image": "/images/real/gallery2.jpg",
+    "plotsAvailable": 65
+  },
+  {
+    "id": "l6",
+    "name": "Noida",
+    "slug": "noida",
+    "description": "Well-established commercial metropolis with metro network, medical hubs, and rapid transit access to South Delhi.",
+    "image": "/images/real/metro.jpg",
+    "plotsAvailable": 25
+  }
+]
