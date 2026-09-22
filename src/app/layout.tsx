@@ -25,6 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://aksinfinity.com'),
   title: 'AKS Infinity | Premium Plots in Greater Noida, Jewar & Yamuna Expressway',
   description: 'Residential plots, farmhouse land and investment opportunities near Greater Noida, Jewar Airport and Yamuna Expressway. Your trusted plot investment partner.',
 };

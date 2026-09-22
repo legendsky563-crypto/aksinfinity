@@ -6,7 +6,7 @@ export async function GET() {
   try {
     const enquiries = getEnquiries();
     return NextResponse.json(enquiries);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to fetch enquiries' }, { status: 500 });
   }
 }
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     
     saveEnquiry(enquiry);
     return NextResponse.json({ message: 'Enquiry saved successfully', enquiry }, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to save enquiry' }, { status: 500 });
   }
 }
@@ -46,7 +46,7 @@ export async function PUT(request: Request) {
     } else {
       return NextResponse.json({ error: 'Enquiry not found' }, { status: 404 });
     }
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to update enquiry' }, { status: 500 });
   }
 }

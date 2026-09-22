@@ -1,7 +1,7 @@
 import { getProjectBySlug, getProjects, getProperties } from '@/lib/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, Tag, CheckCircle } from 'lucide-react';
+import { MapPin, CheckCircle } from 'lucide-react';
 import EnquiryForm from '@/components/properties/EnquiryForm';
 import ProjectMapSection from '@/components/properties/ProjectMapSection';
 import { notFound } from 'next/navigation';

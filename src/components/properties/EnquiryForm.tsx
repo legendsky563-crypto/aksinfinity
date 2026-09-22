@@ -38,7 +38,7 @@ export default function EnquiryForm({ propertyName }: { propertyName?: string })
         setStatus('error');
         setMessage('Failed to submit enquiry. Please try again later.');
       }
-    } catch (error) {
+    } catch {
       setStatus('error');
       setMessage('An error occurred. Please try again.');
     }

@@ -7,10 +7,6 @@ export default function AdminTestimonials() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchTestimonials();
-  }, []);
-
   const fetchTestimonials = async () => {
     try {
       const res = await fetch('/api/testimonials');
@@ -22,6 +18,10 @@ export default function AdminTestimonials() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
 
   const handleDelete = async (id: string) => {
     if (confirm('Delete this testimonial?')) {

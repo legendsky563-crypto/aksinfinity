@@ -1,17 +1,17 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export default function AdminSettings() {
   const [formData, setFormData] = useState({
     siteName: 'AKS Infinity',
-    tagline: 'Luxury Real Estate',
-    phone: '+91 98765 43210',
-    whatsapp: '+91 98765 43210',
+    tagline: 'Premium Plots & Land Investments',
+    phone: '+91 8368834467',
+    whatsapp: '+91 8377077119',
     email: 'info@aksinfinity.com',
-    address: 'Gurugram, Haryana, India',
-    instagram: '',
-    facebook: '',
+    address: 'Office No. 321, 3rd Floor, US Complex, Metro Station Jasola Apollo, Mathura Road, New Delhi 110076',
+    instagram: 'https://www.instagram.com/aksinfinity02/',
+    facebook: 'https://www.facebook.com/profile.php?id=100065019819256',
     linkedin: '',
     adminPassword: ''
   });

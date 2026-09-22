@@ -1,37 +1,44 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useSyncExternalStore } from 'react';
 import AdminSidebar from '@/components/admin/AdminSidebar';
-import { useRouter } from 'next/navigation';
+
+function getAuthSnapshot(): boolean {
+  if (typeof window === 'undefined') return false;
+  return sessionStorage.getItem('admin_auth') === 'true';
+}
+
+function getServerAuthSnapshot(): boolean {
+  return false;
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener('storage', callback);
+  return () => window.removeEventListener('storage', callback);
+}
 
 export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const isAuthStore = useSyncExternalStore(subscribe, getAuthSnapshot, getServerAuthSnapshot);
+  const [localAuth, setLocalAuth] = useState(false);
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  
-  useEffect(() => {
-    const auth = sessionStorage.getItem('admin_auth');
-    setIsAuthenticated(auth === 'true');
-  }, []);
+
+  const isAuthenticated = isAuthStore || localAuth;
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (password === 'admin123') {
       sessionStorage.setItem('admin_auth', 'true');
-      setIsAuthenticated(true);
+      setLocalAuth(true);
       setError('');
     } else {
       setError('Invalid password');
     }
   };
-
-  if (isAuthenticated === null) {
-    return null; // Loading
-  }
 
   if (!isAuthenticated) {
     return (

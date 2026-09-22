@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { MapPin, ZoomIn, X, ExternalLink, Compass, ShieldCheck } from 'lucide-react';
+import { MapPin, ZoomIn, X, ExternalLink } from 'lucide-react';
 
 interface ProjectMapSectionProps {
   projectName: string;

@@ -60,7 +60,7 @@ export function deleteProperty(id: string): void {
 export function getProjects(): Project[] {
   try {
     return readJSON<Project[]>('projects.json');
-  } catch (error) {
+  } catch {
     return [];
   }
 }

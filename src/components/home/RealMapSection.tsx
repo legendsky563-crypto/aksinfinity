@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { MapPin, Navigation, Compass, ExternalLink, Phone } from 'lucide-react';
+import { MapPin, Navigation, Compass, Phone } from 'lucide-react';
 
 interface LocationInfo {
   id: string;

@@ -9,10 +9,6 @@ export default function AdminProperties() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
-  useEffect(() => {
-    fetchProperties();
-  }, []);
-
   const fetchProperties = async () => {
     try {
       const res = await fetch('/api/properties');
@@ -24,6 +20,10 @@ export default function AdminProperties() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchProperties();
+  }, []);
 
   const handleDelete = async (id: string) => {
     if (confirm('Are you sure you want to delete this property?')) {

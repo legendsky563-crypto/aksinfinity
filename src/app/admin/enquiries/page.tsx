@@ -7,16 +7,12 @@ export default function AdminEnquiries() {
   const [enquiries, setEnquiries] = useState<Enquiry[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchEnquiries();
-  }, []);
-
   const fetchEnquiries = async () => {
     try {
       const res = await fetch('/api/enquiries');
-      const data = await res.json();
+      const data: Enquiry[] = await res.json();
       // sort by date desc
-      data.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      data.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
       setEnquiries(data);
     } catch (error) {
       console.error('Error fetching enquiries:', error);
@@ -25,7 +21,11 @@ export default function AdminEnquiries() {
     }
   };
 
-  const updateStatus = async (id: string, newStatus: string) => {
+  useEffect(() => {
+    fetchEnquiries();
+  }, []);
+
+  const updateStatus = async (id: string, newStatus: Enquiry['status']) => {
     try {
       const enq = enquiries.find(e => e.id === id);
       if (!enq) return;
@@ -33,11 +33,11 @@ export default function AdminEnquiries() {
       const res = await fetch('/api/enquiries', {
         method: 'POST', // or PUT depending on API
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...enq, status: newStatus as any })
+        body: JSON.stringify({ ...enq, status: newStatus })
       });
       
       if (res.ok) {
-        setEnquiries(enquiries.map(e => e.id === id ? { ...e, status: newStatus as any } : e));
+        setEnquiries(enquiries.map(e => e.id === id ? { ...e, status: newStatus } : e));
       }
     } catch (error) {
       console.error('Error updating status:', error);
@@ -91,7 +91,7 @@ export default function AdminEnquiries() {
                 <td>
                   <select 
                     value={e.status} 
-                    onChange={(evt) => updateStatus(e.id, evt.target.value)}
+                    onChange={(evt) => updateStatus(e.id, evt.target.value as Enquiry['status'])}
                     className={`status-badge status-${e.status}`}
                     style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}
                   >

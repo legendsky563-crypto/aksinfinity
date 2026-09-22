@@ -65,7 +65,9 @@ export interface Testimonial {
   name: string;
   location: string;
   text: string;
-  image: string;
+  role?: string;
+  rating?: number;
+  image?: string;
 }
 
 export interface Location {

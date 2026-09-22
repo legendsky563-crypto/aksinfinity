@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { X, ZoomIn, Filter } from 'lucide-react';
+import { X, ZoomIn } from 'lucide-react';
 
 interface GalleryItem {
   src: string;

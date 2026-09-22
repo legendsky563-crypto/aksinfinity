@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,7 +10,6 @@ import { MapPin } from 'lucide-react';
 function PlotsContent() {
   const searchParams = useSearchParams();
   const [properties, setProperties] = useState<Property[]>([]);
-  const [filteredProperties, setFilteredProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
   
   const [project, setProject] = useState(searchParams.get('project') || '');
@@ -36,7 +35,7 @@ function PlotsContent() {
     fetchProperties();
   }, []);
 
-  useEffect(() => {
+  const filteredProperties = useMemo(() => {
     let result = [...properties];
 
     if (project) {
@@ -67,7 +66,7 @@ function PlotsContent() {
       result.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
     }
 
-    setFilteredProperties(result);
+    return result;
   }, [properties, project, location, type, plotSize, sort]);
 
   return (

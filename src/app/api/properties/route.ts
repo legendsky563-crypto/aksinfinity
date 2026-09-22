@@ -6,7 +6,7 @@ export async function GET() {
   try {
     const properties = getProperties();
     return NextResponse.json(properties);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to fetch properties' }, { status: 500 });
   }
 }
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     
     saveProperty(property);
     return NextResponse.json({ message: 'Property saved successfully', property }, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to save property' }, { status: 500 });
   }
 }
@@ -40,7 +40,7 @@ export async function DELETE(request: Request) {
     
     deleteProperty(id);
     return NextResponse.json({ message: 'Property deleted successfully' });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to delete property' }, { status: 500 });
   }
 }

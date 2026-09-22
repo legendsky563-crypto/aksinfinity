@@ -6,7 +6,7 @@ export async function GET() {
   try {
     const testimonials = getTestimonials();
     return NextResponse.json(testimonials);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to fetch testimonials' }, { status: 500 });
   }
 }
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     
     saveTestimonial(testimonial);
     return NextResponse.json({ message: 'Testimonial saved successfully', testimonial }, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to save testimonial' }, { status: 500 });
   }
 }
@@ -39,7 +39,7 @@ export async function DELETE(request: Request) {
     
     deleteTestimonial(id);
     return NextResponse.json({ message: 'Testimonial deleted successfully' });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Failed to delete testimonial' }, { status: 500 });
   }
 }
