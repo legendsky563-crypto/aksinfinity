@@ -53,11 +53,14 @@ export default function GallerySection() {
         </div>
 
         {/* Gallery Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-          gap: 'var(--space-6)',
-        }}>
+        <div 
+          className="gallery-section-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))',
+            gap: 'var(--space-6)',
+          }}
+        >
           {featuredGallery.map((item, idx) => (
             <div
               key={idx}

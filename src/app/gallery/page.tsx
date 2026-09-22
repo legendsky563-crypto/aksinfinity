@@ -182,11 +182,14 @@ export default function GalleryPage() {
         </div>
 
         {/* Gallery Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-          gap: 'var(--space-6)',
-        }}>
+        <div 
+          className="gallery-page-grid"
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))',
+            gap: 'var(--space-6)',
+          }}
+        >
           {filteredItems.map((item, index) => (
             <div 
               key={index} 

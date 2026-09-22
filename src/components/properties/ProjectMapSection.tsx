@@ -36,9 +36,10 @@ export default function ProjectMapSection({
         </div>
 
         {/* View Switcher Tabs */}
-        <div style={{ display: 'flex', gap: 'var(--space-2)', background: 'var(--color-surface)', padding: '4px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-mist)' }}>
+        <div className="project-map-tabs" style={{ display: 'flex', gap: 'var(--space-2)', background: 'var(--color-surface)', padding: '4px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--color-mist)' }}>
           <button
             type="button"
+            className="project-map-tab-btn"
             onClick={() => setActiveTab('blueprint')}
             style={{
               padding: 'var(--space-2) var(--space-4)',
@@ -56,6 +57,7 @@ export default function ProjectMapSection({
           </button>
           <button
             type="button"
+            className="project-map-tab-btn"
             onClick={() => setActiveTab('googlemap')}
             style={{
               padding: 'var(--space-2) var(--space-4)',
@@ -77,6 +79,7 @@ export default function ProjectMapSection({
       {activeTab === 'blueprint' ? (
         <div>
           <div
+            className="project-map-container"
             onClick={() => setIsLightboxOpen(true)}
             style={{
               position: 'relative',
@@ -155,6 +158,7 @@ export default function ProjectMapSection({
       ) : (
         <div>
           <div
+            className="project-map-container"
             style={{
               width: '100%',
               height: '420px',

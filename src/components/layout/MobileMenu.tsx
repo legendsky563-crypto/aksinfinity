@@ -12,20 +12,46 @@ interface MobileMenuProps {
 }
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, links }) => {
+  React.useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
     <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
-      <div className="mobile-menu-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.5rem 2rem' }}>
+      <div className="mobile-menu-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <span style={{ fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '1px', opacity: 0.8, color: 'var(--color-charcoal)' }}>Theme</span>
+          <span style={{ fontSize: '0.8125rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '1px', color: 'var(--color-champagne)' }}>Theme</span>
           <ThemeToggle />
         </div>
-        <button onClick={onClose} aria-label="Close menu" style={{ background: 'none', border: 'none', color: 'var(--color-charcoal)', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-          <X size={28} />
+        <button 
+          onClick={onClose} 
+          aria-label="Close menu" 
+          style={{ 
+            background: 'none', 
+            border: 'none', 
+            color: 'inherit', 
+            cursor: 'pointer', 
+            display: 'flex', 
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '44px',
+            height: '44px',
+            borderRadius: '50%',
+            backgroundColor: 'rgba(201, 169, 110, 0.1)',
+          }}
+        >
+          <X size={24} />
         </button>
       </div>
-      <div className="mobile-menu-inner" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: 'calc(100% - 90px)', overflowY: 'auto', padding: '1rem 0' }}>
+      <div className="mobile-menu-inner">
         {links.map((link) => (
           <React.Fragment key={link.label}>
             {link.href ? (
